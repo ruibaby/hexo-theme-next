@@ -1,4 +1,4 @@
-{% macro render(display_toc) %}
+<#macro render display_toc>
   <div class="toggle sidebar-toggle">
     <span class="toggle-line toggle-line-first"></span>
     <span class="toggle-line toggle-line-middle"></span>
@@ -16,10 +16,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          {{ __('sidebar.toc') }}
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          {{ __('sidebar.overview') }}
+          站点概览
         </li>
       </ul>
 
@@ -32,7 +32,7 @@
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
+        <#include "../_partials/sidebar/site-overview.ftl">
 
         {{- next_inject('sidebar') }}
       </div>
@@ -47,4 +47,4 @@
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
-{% endmacro %}
+</#macro>

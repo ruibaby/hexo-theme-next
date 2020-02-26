@@ -1,6 +1,6 @@
 <div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="{{ __('accessibility.nav_toggle') }}">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>

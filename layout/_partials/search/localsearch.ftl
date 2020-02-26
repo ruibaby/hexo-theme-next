@@ -4,7 +4,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocorrect="off" autocapitalize="off"
-           placeholder="{{ __('search.placeholder') }}" spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">

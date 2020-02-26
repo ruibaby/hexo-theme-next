@@ -4,15 +4,15 @@
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>{{ __('post.copyright.author') + __('symbol.colon') }} </strong>
-    {{- page.author or author }}
+    <strong>本文作者： </strong>
+    ${user.nickname!}
   </li>
   <li class="post-copyright-link">
-    <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
+    <strong>本文链接： </strong>
     {{ next_url(page.permalink, page.permalink, {title: page.title}) }}
   </li>
   <li class="post-copyright-license">
-    <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
+    <strong>版权声明： </strong>
     {{- __('post.copyright.license_content', next_url(ccURL, ccIcon + ccText)) }}
   </li>
 </ul>

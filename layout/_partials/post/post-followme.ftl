@@ -1,7 +1,7 @@
 {%- if theme.follow_me %}
 
   <div class="followme">
-    <p>{{ __('follow_me.welcome') }}</p>
+    <p>欢迎关注我的其它发布渠道</p>
 
     <div class="social-list">
         {%- for name, value in theme.follow_me %}

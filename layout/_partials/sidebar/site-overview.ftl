@@ -1,10 +1,10 @@
 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  {%- if theme.avatar.url %}
-    <img class="site-author-image" itemprop="image" alt="{{ author }}"
-      src="{{ url_for(theme.avatar.url) }}">
-  {%- endif %}
-  <p class="site-author-name" itemprop="name">{{ author }}</p>
-  <div class="site-description" itemprop="description">{{ description }}</div>
+  <#if user.avatar?? && user.avatar!=''>
+    <img class="site-author-image" itemprop="image" alt="${user.nickname!}"
+      src="${user.avatar!}">
+  </#if>
+  <p class="site-author-name" itemprop="name">${user.nickname!}</p>
+  <div class="site-description" itemprop="description">${user.description!}</div>
 </div>
 
 {%- if theme.site_state %}
@@ -18,7 +18,7 @@
           <a href="{{ url_for(config.archive_dir) }}">
         {%- endif %}
           <span class="site-state-item-count">{{ site.posts.length }}</span>
-          <span class="site-state-item-name">{{ __('state.posts') }}</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
     {%- endif %}
@@ -35,7 +35,7 @@
           {%- endif %}
         {%- endif %}
         <span class="site-state-item-count">{{ site.categories.length }}</span>
-        <span class="site-state-item-name">{{ __('state.categories') }}</span>
+        <span class="site-state-item-name">分类</span>
         {%- if hasCategoriesPage %}</a>{%- endif %}
       </div>
     {%- endif %}
@@ -52,7 +52,7 @@
           {%- endif %}
         {%- endif %}
         <span class="site-state-item-count">{{ site.tags.length }}</span>
-        <span class="site-state-item-name">{{ __('state.tags') }}</span>
+        <span class="site-state-item-name">标签</span>
         {%- if hasTagsPage %}</a>{%- endif %}
       </div>
     {%- endif %}
@@ -95,12 +95,12 @@
   </div>
 {%- endif %}
 
-{%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
+<#if settings.creative_commons_license?? && settings.creative_commons_sidebar!false>
   <div class="cc-license motion-element" itemprop="license">
   {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons">' %}
     {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
   </div>
-{%- endif %}
+</#if>
 
 {# Blogroll #}
 {%- if theme.links %}

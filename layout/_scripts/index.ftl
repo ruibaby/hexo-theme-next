@@ -1,4 +1,4 @@
-{% include 'vendors.swig' %}
+<#include "vendors.ftl">
 
 {{- next_js('utils.js') }}
 {%- if theme.motion.enable %}

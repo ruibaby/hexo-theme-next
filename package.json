@@ -4,6 +4,31 @@
   "description": "Elegant and powerful theme for Hexo.",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "npm run build-Gemini && npm run build-Mist && npm run build-Muse && npm run build-Pisces",
+
+    "build-Gemini": "npm run build-Gemini-clean && npm run build-Gemini-stylus && npm run build-Gemini-autoprefix && npm run build-Gemini-cleancss",
+    "build-Gemini-autoprefix": "postcss --use autoprefixer --map false --output source/css/Gemini.css source/css/Gemini.css",
+    "build-Gemini-cleancss": "cleancss -o source/css/Gemini.min.css source/css/Gemini.css",
+    "build-Gemini-clean": "rimraf css",
+    "build-Gemini-stylus": "stylus -w source/css/Gemini.styl -o source/css/Gemini.css",
+
+    "build-Mist": "npm run build-Mist-clean && npm run build-Mist-stylus && npm run build-Mist-autoprefix && npm run build-Mist-cleancss",
+    "build-Mist-autoprefix": "postcss --use autoprefixer --map false --output source/css/Mist.css source/css/Mist.css",
+    "build-Mist-cleancss": "cleancss -o source/css/Mist.min.css source/css/Mist.css",
+    "build-Mist-clean": "rimraf css",
+    "build-Mist-stylus": "stylus -w source/css/Mist.styl -o source/css/Mist.css",
+
+    "build-Muse": "npm run build-Muse-clean && npm run build-Muse-stylus && npm run build-Muse-autoprefix && npm run build-Muse-cleancss",
+    "build-Muse-autoprefix": "postcss --use autoprefixer --map false --output source/css/Muse.css source/css/Muse.css",
+    "build-Muse-cleancss": "cleancss -o source/css/Muse.min.css source/css/Muse.css",
+    "build-Muse-clean": "rimraf css",
+    "build-Muse-stylus": "stylus -w source/css/Muse.styl -o source/css/Muse.css",
+
+    "build-Pisces": "npm run build-Pisces-clean && npm run build-Pisces-stylus && npm run build-Pisces-autoprefix && npm run build-Pisces-cleancss",
+    "build-Pisces-autoprefix": "postcss --use autoprefixer --map false --output source/css/Pisces.css source/css/Pisces.css",
+    "build-Pisces-cleancss": "cleancss -o source/css/Pisces.min.css source/css/Pisces.css",
+    "build-Pisces-clean": "rimraf css",
+    "build-Pisces-stylus": "stylus -w source/css/Pisces.styl -o source/css/Pisces.css",
     "test": "gulp"
   },
   "repository": {
@@ -22,13 +47,18 @@
   },
   "homepage": "https://theme-next.org",
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "clean-css-cli": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-config-theme-next": "^1.1.3",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-shell": "^0.8.0",
     "js-yaml": "^3.13.1",
-    "stylint": "^2.0.0"
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "stylint": "^2.0.0",
+    "stylus": "^0.54.7"
   },
   "engines": {
     "node": ">=10.9.0"

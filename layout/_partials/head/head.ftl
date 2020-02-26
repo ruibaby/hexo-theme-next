@@ -3,18 +3,18 @@
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 <meta name="generator" content="Hexo {{ hexo_version }}">
 
-{%- if theme.favicon.apple_touch_icon %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}">
-{%- endif %}
-{%- if theme.favicon.medium %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}">
-{%- endif %}
-{%- if theme.favicon.small %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}">
-{%- endif %}
-{%- if theme.favicon.safari_pinned_tab %}
-  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}" color="{{ theme.android_chrome_color }}">
-{%- endif %}
+<#if settings.favicon_apple_touch_icon??>
+  <link rel="apple-touch-icon" sizes="180x180" href="${settings.favicon_apple_touch_icon!}">
+</#if>
+<#if settings.favicon_medium??>
+  <link rel="icon" type="image/png" sizes="32x32" href="${settings.favicon_medium!}">
+</#if>
+<#if settings.favicon_small??>
+  <link rel="icon" type="image/png" sizes="16x16" href="${settings.favicon_small!}">
+</#if>
+<#if settings.favicon_safari_pinned_tab??>
+  <link rel="mask-icon" href="${settings.favicon_safari_pinned_tab!}" color="{{ theme.android_chrome_color }}">
+</#if>
 {%- if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
 {%- endif %}
